@@ -124,12 +124,6 @@ h2 {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
 span.highlight {
   background-color: #ffffd0;
 }
@@ -139,4 +133,77 @@ span.highlight {
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Subtle zoom on the profile photo */
+.hoverZoomLink {
+  display: block;
+  transition: transform .25s ease;
+}
+
+.hoverZoomLink:hover {
+  transform: scale(1.03);
+}
+
+/* ===================================================================
+   DARK MODE
+   =================================================================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e6e6e6;
+  }
+
+  a {
+    color: #5aa9ff;
+  }
+
+  a:focus,
+  a:hover {
+    color: #f09228;
+  }
+
+  /* Highlighted publication / project rows */
+  tr[bgcolor="#ffffd0"] {
+    background-color: #2b2b1c;
+  }
+
+  span.highlight {
+    background-color: #4a4a2a;
+    color: #f2f2e4;
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE — stack into a single column on small screens
+   =================================================================== */
+@media screen and (max-width: 640px) {
+  .page td {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    box-sizing: border-box;
+  }
+
+  .name {
+    font-size: 28px;
+  }
+
+  .bio-photo {
+    text-align: center;
+  }
+
+  .bio-photo img {
+    width: 60% !important;
+    max-width: 220px;
+  }
+
+  .one {
+    margin: 0 auto;
+  }
 }
